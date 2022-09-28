@@ -1,4 +1,9 @@
 package org.models;
 
-public class Person {
+import java.util.*;
+public class Person extends BaseEntity{
+
+    public Person(UUID id) {
+        super(id);
+    }
 }
