@@ -1,11 +1,14 @@
 package org.models;
 
+import org.persistence.BaseRepository;
+
 import java.util.UUID;
 
 public class BaseEntity {
 
-    protected UUID id;
+    public UUID id;
 
+    public BaseEntity() {}
     public BaseEntity(UUID id){
         this.id = id;
     }

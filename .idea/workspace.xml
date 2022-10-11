@@ -5,15 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c22c451-8f47-402e-8dea-576934a85357" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/models/BaseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/persistence/BaseRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/persistence/IPersonRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/persistence/IRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/persistence/PersonRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/controllers/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/controllers/PersonController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/util/Container.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/util/HttpMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/util/HttpStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/util/Request.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/util/Response.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/util/Utilities.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/crud/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crud/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/models/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/models/BaseEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/models/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/persistence/PersonDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/persistence/BaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/persistence/BaseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/persistence/IPersonRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/persistence/IRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/persistence/IRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/persistence/PersonRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/HttpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/HttpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/HttpCustomServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/HttpRepository.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +35,7 @@
       <list>
         <option value="package-info" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -41,13 +52,50 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.crud.Main" />
+      <module name="customCRUD" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.crud.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestHttpServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.test.TestHttpServer" />
+      <module name="customCRUD" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.TestHttpServer" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -69,5 +117,51 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/server/HttpController.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/server/HttpController.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/util/Utilities.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/util/Utilities.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/util/Utilities.java</url>
+          <line>85</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/persistence/BaseRepository.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/controllers/PersonController.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/util/Utilities.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
