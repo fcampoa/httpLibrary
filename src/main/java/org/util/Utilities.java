@@ -49,19 +49,16 @@ public class Utilities {
                 return;
             }
             json.append("{").append("\n");
-                List<Field> totalFields = new ArrayList<>();
-                Collections.addAll(totalFields, obj.getClass().getSuperclass().getDeclaredFields());
-                Collections.addAll(totalFields, obj.getClass().getDeclaredFields());
-                int total = totalFields.size();
-                int cont = 0;
-                for(Field field: totalFields) {
+                Field[] fields = getFields(obj);
+                int total = fields.length;
+                for(int i = 0; i < total; i++) {
+                    Field field = fields[i];
                     json.append("\"").append(field.getName()).append("\"").append(": ");
                     field.setAccessible(true);
                     toJson(field.get(obj), json);
-                    if (cont < total - 1) {
+                    if (i < total - 1) {
                         json.append(",");
                     }
-                    cont ++;
                 }
             json.append("}").append("\n");
         }
@@ -73,7 +70,7 @@ public class Utilities {
     }
     private static void fromJson(String json, Object target) throws Exception {
         Map<String, String> properties = toMap(json);
-        Field[] fields = target.getClass().getDeclaredFields();
+        Field[] fields = getFields(target);
         for(Field field : fields) {
             field.setAccessible(true);
             String value = properties.get(field.getName());
@@ -96,5 +93,13 @@ public class Utilities {
             properties.put(entry[0].trim(), entry[1].trim());
         }
         return properties;
+    }
+    private static Field[] getFields(Object obj) {
+        List<Field> totalFields = new ArrayList<>();
+        if (obj.getClass().getSuperclass() != null) {
+            Collections.addAll(totalFields, obj.getClass().getSuperclass().getDeclaredFields());
+        }
+        Collections.addAll(totalFields, obj.getClass().getDeclaredFields());
+        return (Field[]) totalFields.toArray();
     }
 }

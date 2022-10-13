@@ -5,25 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c22c451-8f47-402e-8dea-576934a85357" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/controllers/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/controllers/PersonController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/util/Container.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/util/HttpMethod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/util/HttpStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/util/Request.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/util/Response.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/util/Utilities.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/library/RestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/library/configurationClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/library/repository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/library/service.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/library/webMethod.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/crud/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/crud/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/models/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/models/BaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/models/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/persistence/BaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/persistence/BaseRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/persistence/IPersonRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/persistence/IRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/persistence/IRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/persistence/PersonRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/HttpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/server/HttpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/HttpCustomServer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/server/HttpRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/util/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/util/Container.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/util/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/util/Utilities.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,9 +24,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -133,23 +123,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/util/Utilities.java</url>
-          <line>69</line>
+          <line>66</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/util/Utilities.java</url>
-          <line>74</line>
+          <line>71</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/util/Utilities.java</url>
-          <line>85</line>
+          <line>82</line>
           <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/persistence/BaseRepository.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/controllers/PersonController.java</url>
@@ -158,7 +143,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/util/Utilities.java</url>
-          <line>56</line>
+          <line>53</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
