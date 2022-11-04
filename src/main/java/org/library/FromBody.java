@@ -6,6 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.ANNOTATION_TYPE)
-@interface repository {
+@Target({ElementType.PARAMETER, ElementType.ANNOTATION_TYPE})
+public @interface FromBody {
+    String name() default "";
 }

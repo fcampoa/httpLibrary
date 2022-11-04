@@ -7,6 +7,10 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE_USE, ElementType.ANNOTATION_TYPE})
-public @interface configurationClass {
-
+public @interface StartupClass {
+    String basePackage() default "";
+    String[] basePackages() default {""};
+    String[] servicesPackages() default {""};
+    String[] controllersPackages() default {""};
+    String[] repositoriesPackages() default {""};
 }

@@ -1,15 +1,19 @@
 package org.persistence;
 
+import org.library.Repository;
 import org.models.BaseEntity;
 
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+@Repository
 public class BaseRepository<T extends BaseEntity> implements IRepository<T> {
     protected List<T> list;
-    public BaseRepository(List<T> list) {
-        this.list = list;
+    public BaseRepository() {
+        this.list = new ArrayList<>();
     }
     @Override
     public T add(T entity) {

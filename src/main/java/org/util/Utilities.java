@@ -1,5 +1,7 @@
 package org.util;
 
+import org.library.*;
+
 import java.lang.reflect.Field;
 import java.nio.file.StandardOpenOption;
 import java.util.*;
@@ -20,6 +22,18 @@ public class Utilities {
         WRAPPER_TYPE_MAP.put(Void.class, void.class);
         WRAPPER_TYPE_MAP.put(UUID.class, UUID.class);
 
+    }
+    private static final Map<String, Class> WRAPPER_ANNOTATION_TYPE;
+    static {
+        WRAPPER_ANNOTATION_TYPE = new HashMap<String, Class>(16);
+        WRAPPER_ANNOTATION_TYPE.put("GET", GET.class);
+        WRAPPER_ANNOTATION_TYPE.put("POST", POST.class);
+        WRAPPER_ANNOTATION_TYPE.put("PUT", PUT.class);
+        WRAPPER_ANNOTATION_TYPE.put("PATCH", PATCH.class);
+        WRAPPER_ANNOTATION_TYPE.put("DELETE", DELETE.class);
+    }
+    public static Class getAnnotationClass(String key) {
+        return WRAPPER_ANNOTATION_TYPE.get(key);
     }
     public static boolean isPrimitiveType(Object source) {
         return WRAPPER_TYPE_MAP.containsKey(source.getClass());
@@ -83,13 +97,18 @@ public class Utilities {
             field.set(target, field.getType().cast(value));
         }
     }
-    private static Map<String, String> toMap(String json) {
-        json = json.substring(1, json.length() - 1).replace("\n", "").replace("\"", "");
-        String[] keyValuePairs = json.split(",");
+    public static Map<String, String> toMap(String json) {
+        boolean isComposite = false;
+        json = json.substring(1, json.length() - 1).replace("\n", "").trim().replace("\"", "").trim().replace(" ", "");
+        String[] keyValuePairs = json.split("},").length > 0 ? json.split("},") : json.split(",");
         Map<String, String> properties = new HashMap<>();
 
         for(String pair: keyValuePairs) {
-            String[] entry = pair.split(":");
+            String[] entry = pair.split(":\\{").length > 0 ? pair.split(":\\{") : pair.split(":");
+            if (pair.split(":\\{").length > 0) {
+                properties.put(entry[0].trim(), entry[1].substring(0, entry[1].length() - 1).trim());
+                continue;
+            }
             properties.put(entry[0].trim(), entry[1].trim());
         }
         return properties;
@@ -100,6 +119,8 @@ public class Utilities {
             Collections.addAll(totalFields, obj.getClass().getSuperclass().getDeclaredFields());
         }
         Collections.addAll(totalFields, obj.getClass().getDeclaredFields());
-        return (Field[]) totalFields.toArray();
+        Field[] fields = new Field[totalFields.size()];
+        totalFields.toArray(fields);
+        return fields;
     }
 }

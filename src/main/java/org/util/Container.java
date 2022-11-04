@@ -10,7 +10,7 @@ public class Container {
 
     private static IRepository<Person> personRepo;
     public static IRepository<Person> getPersonRepo() {
-        return (personRepo != null) ? personRepo :  (personRepo = new BaseRepository(new ArrayList<>()));
+        return (personRepo != null) ? personRepo :  (personRepo = new BaseRepository());
     }
 
 }

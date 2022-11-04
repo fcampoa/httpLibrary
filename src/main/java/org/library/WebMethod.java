@@ -6,7 +6,10 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.TYPE_USE, ElementType.ANNOTATION_TYPE})
-public @interface configurationClass {
-
+@Target({ElementType.METHOD, ElementType.ANNOTATION_TYPE})
+@interface WebMethod {
+    String path() default "";
+    String method();
+    String consumes() default "json";
+    String produces() default "json";
 }

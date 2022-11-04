@@ -16,6 +16,7 @@ public class Response implements Serializable {
     }
     public Response(Object data) {
         this.data = data;
+        this.status = HttpStatus.OK.getValue();
     }
     public Object getData() {
         return this.data;
