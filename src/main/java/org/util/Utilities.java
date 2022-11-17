@@ -3,9 +3,7 @@ package org.util;
 import org.library.*;
 
 import java.lang.reflect.Field;
-import java.nio.file.StandardOpenOption;
 import java.util.*;
-import javax.script.*;
 
 public class Utilities {
     private static final Map<Class<?>, Class<?>> WRAPPER_TYPE_MAP;
@@ -100,6 +98,7 @@ public class Utilities {
     public static Map<String, String> toMap(String json) {
         boolean isComposite = false;
         json = json.substring(1, json.length() - 1).replace("\n", "").trim().replace("\"", "").trim().replace(" ", "");
+
         String[] keyValuePairs = json.split("},").length > 0 ? json.split("},") : json.split(",");
         Map<String, String> properties = new HashMap<>();
 
@@ -112,6 +111,20 @@ public class Utilities {
             properties.put(entry[0].trim(), entry[1].trim());
         }
         return properties;
+    }
+
+    public static void toMap2(String json, Map<String, String> map){
+        json = json.substring(1, json.length() -2).replace("\n", "").trim().replace("\"", "").trim().replace(" ", "");
+        if(json.startsWith("[") || json.startsWith("{")) {
+        // json = json.substring(1, json.lastIndexOf("]"));
+            toMap2(json, map);
+        }
+        int index = json.indexOf(":");
+
+    }
+
+    private static String stringify(String json) {
+    return null;
     }
     private static Field[] getFields(Object obj) {
         List<Field> totalFields = new ArrayList<>();
