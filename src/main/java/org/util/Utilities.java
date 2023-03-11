@@ -4,6 +4,8 @@ import org.library.*;
 
 import java.lang.reflect.Field;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Utilities {
     private static final Map<Class<?>, Class<?>> WRAPPER_TYPE_MAP;
@@ -97,7 +99,7 @@ public class Utilities {
     }
     public static Map<String, String> toMap(String json) {
         boolean isComposite = false;
-        json = json.substring(1, json.length() - 1).replace("\n", "").trim().replace("\"", "").trim().replace(" ", "");
+        json = json.substring(1, json.length() - 2).replace("\n", "").trim().replace("\"", "").trim().replace(" ", "");
 
         String[] keyValuePairs = json.split("},").length > 0 ? json.split("},") : json.split(",");
         Map<String, String> properties = new HashMap<>();
@@ -115,12 +117,39 @@ public class Utilities {
 
     public static void toMap2(String json, Map<String, String> map){
         json = json.substring(1, json.length() -2).replace("\n", "").trim().replace("\"", "").trim().replace(" ", "");
-        if(json.startsWith("[") || json.startsWith("{")) {
-        // json = json.substring(1, json.lastIndexOf("]"));
+        if (json.startsWith("[")){
+            json = json.substring(1, json.length() -2);
             toMap2(json, map);
         }
-        int index = json.indexOf(":");
+        if (json.startsWith("\\{")) {
+            json.substring(1, json.length() - 2);
+            int index =  json.indexOf(",");
+            int length = index >= 0 ? index : json.length() - 1;
+            String prop = json.substring(0, length);
+        }
+    }
 
+    public static void fromJson2(String json, Object target) throws Exception{
+        Map<String, String> properties = toMap(json);
+        Field[] fields = getFields(target);
+        for(Field field : fields) {
+            field.setAccessible(true);
+            String fieldName = properties.get(field.getName());
+            Pattern fieldPattern = Pattern.compile("\""+fieldName+"\"\\s*:\\s*\"([^,]*)\",");
+            Matcher fieldMatcher = fieldPattern.matcher(json);
+            String value = fieldMatcher.group(1);
+            if (value.startsWith("{")) {
+                Object prop = field.getType().newInstance();
+                fromJson(fieldName, prop);
+                field.set(target, prop);
+                continue;
+            }
+            field.set(target, field.getType().cast(value));
+        }
+    }
+
+    private int isComposite(String json) {
+        return json.indexOf("\\{");
     }
 
     private static String stringify(String json) {

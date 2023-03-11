@@ -21,6 +21,7 @@ public class ApplicationConfiguration {
         String componentsPath = "";
         try{
             httpserver = HttpServer.create(new InetSocketAddress(port), 0);
+            System.out.println("server started");
             if (applicatioClass.isAnnotationPresent(StartupClass.class)) {
                 StartupClass startup = (StartupClass) applicatioClass.getAnnotation(StartupClass.class);
                 String controllersPackage = startup.controllersPackages()[0];

@@ -97,7 +97,7 @@ public class ControllerMiddleware implements HttpHandler {
                         FromBody b = (FromBody) annotation;
                         String v = paramsValues.get(b.name()).toString();
                         Class c = param.getType();
-                       values.add(Utilities.fromJson("", param.getClass()));
+                       values.add(Utilities.fromJson(v, param.getClass()));
                     }
                 }
             }
