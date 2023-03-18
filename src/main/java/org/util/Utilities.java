@@ -98,7 +98,7 @@ public class Utilities {
         }
     }
     public static Map<String, String> toMap(String json) {
-        boolean isComposite = false;
+       /* boolean isComposite = false;
         json = json.substring(1, json.length() - 2).replace("\n", "").trim().replace("\"", "").trim().replace(" ", "");
 
         String[] keyValuePairs = json.split("},").length > 0 ? json.split("},") : json.split(",");
@@ -110,6 +110,15 @@ public class Utilities {
                 properties.put(entry[0].trim(), entry[1].substring(0, entry[1].length() - 1).trim());
                 continue;
             }
+            properties.put(entry[0].trim(), entry[1].trim());
+        }
+        return properties;*/
+        json = json.substring(1, json.length() - 1).replace("\n", "").replace("\"", "");
+        String[] keyValuePairs = json.split(",");
+        Map<String, String> properties = new HashMap<>();
+
+        for(String pair: keyValuePairs) {
+            String[] entry = pair.split(":");
             properties.put(entry[0].trim(), entry[1].trim());
         }
         return properties;
